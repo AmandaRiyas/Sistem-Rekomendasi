@@ -2,51 +2,39 @@
 
 ## Project Overview
 
-Pada bagian ini, Kamu perlu menuliskan latar belakang yang relevan dengan proyek yang diangkat.
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Jelaskan mengapa dan bagaimana masalah tersebut harus diselesaikan
-- Menyertakan hasil riset terkait atau referensi. Referensi yang diberikan harus berasal dari sumber yang kredibel dan author yang jelas.
-- Format Referensi dapat mengacu pada penulisan sitasi [IEEE](https://journals.ieeeauthorcenter.ieee.org/wp-content/uploads/sites/7/IEEE_Reference_Guide.pdf), [APA](https://www.mendeley.com/guides/apa-citation-guide/) atau secara umum seperti [di sini](https://penerbitdeepublish.com/menulis-buku-membuat-sitasi-dengan-mudah/)
-- Sumber yang bisa digunakan [Scholar](https://scholar.google.com/)
+Terkadang banyak orang ingin membaca suatu buku yang sesuai dengan kesukaan mereka atau membaca buku yang mirip dengan buku yang pernah mereka cari atau pernah mereka baca. Namun banyak orang sering kesulitan mencari buku apa yang mirip dengan buku yang pernah mereka baca atau yang mereka cari. Hal ini tentu saja menjadi suatu perhatian khusus yang harus diselesaikan. Seharusnya ada suatu teknologi yang dapat membuat suatu rekomendasi mengenai buku apa yang sebaiknya mereka baca. Oleh karena itu dilakukan pemodelan rekomendasi sistem menggunakan content best filtering agar mereka bisa menemukan apa yang mereka cari. Dari penelitian terdahulu yang berjudul "Sistem Rekomendasi Buku Menggunakan Metode Content Best Filtering mendapatkan hasil bahwa Sistem rekomendasi buku dengan menggunakan teknik pembobotan TF-IDF dan algoritma cosine similarity dapat memberikan rekomendasi kepada pengguna sesuai dengan kemiripan data buku yang tersedia pada database, pada penelitiannya akurasi sistem rekomendasi buku menggunakan content best filtering memiliki tingkat akurasi precision sebesar 85% (Zayyad, 2021). Sehingga pada penelitian ini akan mencoba membuktikan apakah metode content best filtering bisa atau tidak memberikan akurasi yang akurat mengenai sistem rekomendasi buku.
 
 ## Business Understanding
-
-Pada bagian ini, Anda perlu menjelaskan proses klarifikasi masalah.
-
-Bagian laporan ini mencakup:
+Suatu perusahaan yang bergerak pada bidang penerbitan buku atau penjualan buku tentunya selalu mencari tahu minat pembaca dalam membaca buku itu apa saja. Perusahaan akan selalu melakukan analisis tren minat baca buku agar nantinya memperoleh keuntungan yang maksimal dalam penjualan bukunya. Oleh karen itu diperlukan suatu sistem untuk mencari buku apa saja yang menjadi minat pembaca saat ini dan buku apa saja yang hampir sama topiknya dengan apa yanng mereka baca. Hal ini tentunya dapat meningkatkan penjualan dengan lebih baik lagi karena apa yang dibutuhkan masyarakat dapat dicari di sistem rekomendasi dan perusahaan dapat menggunakan data ini untuk menerbitkan atau menjual buku sesuai yang diminati pembaca.
 
 ### Problem Statements
-
-Menjelaskan pernyataan masalah:
-- Pernyataan Masalah 1
-- Pernyataan Masalah 2
-- Pernyataan Masalah n
+Membuat sistem rekomendasi yang dapat mencari tahu buku yang dapat direkomendasikan kepada pembaca sesuai apa yang mereka inginkan.
 
 ### Goals
-
-Menjelaskan tujuan proyek yang menjawab pernyataan masalah:
-- Jawaban pernyataan masalah 1
-- Jawaban pernyataan masalah 2
-- Jawaban pernyataan masalah n
-
-Semua poin di atas harus diuraikan dengan jelas. Anda bebas menuliskan berapa pernyataan masalah dan juga goals yang diinginkan.
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Menambahkan bagian “Solution Approach” yang menguraikan cara untuk meraih goals. Bagian ini dibuat dengan ketentuan sebagai berikut: 
+Berhasil membuat sistem rekomendasi buku yang dapat memberikan rekomendasi buku semirip mungkin dengan apa yang mereka cari.
 
     ### Solution statements
-    - Mengajukan 2 atau lebih solution approach (algoritma atau pendekatan sistem rekomendasi).
+    - Menggunakan content best filtering
 
 ## Data Understanding
-Paragraf awal bagian ini menjelaskan informasi mengenai jumlah data, kondisi data, dan informasi mengenai data yang digunakan. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
+Data pada proyek ini berasal dari kaggle yang berjudul Books Sales and Ratings dengan link https://www.kaggle.com/datasets/thedevastator/books-sales-and-ratings 
 
-Selanjutnya, uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:  
-
-Variabel-variabel pada Restaurant UCI dataset adalah sebagai berikut:
-- accepts : merupakan jenis pembayaran yang diterima pada restoran tertentu.
-- cuisine : merupakan jenis masakan yang disajikan pada restoran.
-- dst
+Variabel-variabel pada Books Sales and Ratings adalah sebagai berikut:
+- index : merupakan kode dari buku
+- Publishing Year : Tahun dimana buku tersebut diterbitkan
+- Book Name : Judul buku
+- Author : Nama penulis buku
+- language_code : Kode yang mewakili bahasa penulisan buku tersebut
+- Author_Rating : Penilaian penulis berdasarkan karya-karyanya sebelumnya
+- Book_average_rating : Nilai rata-rata yang diberikan pembaca terhadap buku tersebut
+- Book_ratings_count : Jumlah rating yang diberikan pembaca terhadap buku tersebut
+- genre : Genre atau kategori buku
+- gross sales : Total pendapatan penjualan yang dihasilkan oleh buku tertentu
+- publisher revenue : Pendapatan yang diperoleh penerbit dari penjualan buku tertentu
+- sale price : Harga jual buku
+- sales rank : Peringkat buku tertentu berdasarkan kinerja penjualannya
+- Publisher : Penerbit
+- units sold : Jumlah unit yang terjual
 
 **Rubrik/Kriteria Tambahan (Opsional)**:
 - Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data beserta insight atau exploratory data analysis.
