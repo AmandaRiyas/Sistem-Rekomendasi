@@ -17,6 +17,8 @@ Suatu perusahaan yang bergerak di bidang penerbitan atau penjualan buku tentunya
 
     ### Solution statements
     - Membuat sistem rekomendasi buku menggunakan content best filtering
+    - Melakukan hyperparameter tuning pada TF-IDF Vectorizer
+    - Melakukan evaluasi model dengan average_similarity
 
 ## Data Understanding
 Data pada proyek ini berasal dari kaggle yang berjudul Books Sales and Ratings dengan link https://www.kaggle.com/datasets/thedevastator/books-sales-and-ratings 
@@ -116,15 +118,6 @@ Tuning model diperlukan untuk meningkatkan akurasi similarity buku. Oleh karena 
 
 Kemudian di cek kemabli similaritynya menggunakan average_similarity dan diperoleh hasilnya yaitu:
 
-Pada bagian ini Anda perlu menyebutkan metrik evaluasi yang digunakan. Kemudian, jelaskan hasil proyek berdasarkan metrik evaluasi tersebut.
+<img src="https://raw.githubusercontent.com/AmandaRiyas/Sistem-Rekomendasi/refs/heads/main/Gambar/plot%20evaluasi.png" width="500"/>
 
-Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
-
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
-
-**---Ini adalah bagian akhir laporan---**
-
-_Catatan:_
-- _Anda dapat menambahkan gambar, kode, atau tabel ke dalam laporan jika diperlukan. Temukan caranya pada contoh dokumen markdown di situs editor [Dillinger](https://dillinger.io/), [Github Guides: Mastering markdown](https://guides.github.com/features/mastering-markdown/), atau sumber lain di internet. Semangat!_
-- Jika terdapat penjelasan yang harus menyertakan code snippet, tuliskan dengan sewajarnya. Tidak perlu menuliskan keseluruhan kode project, cukup bagian yang ingin dijelaskan saja.
+Dari gambar di atas terlihat bahwa akurasi dari average_similarity sudah baik.
