@@ -112,6 +112,9 @@ Dari average_similarity diperoleh nilainya yaitu 0,2233872976398874, artinya kes
 ## Tuning Model
 Tuning model diperlukan untuk meningkatkan akurasi similarity buku. Oleh karena itu dilakukan Hyperparameter Tuning pada TF-IDF Vectorizer dengan parameter stop_words = english, max_features = 1000, ngram_range = (1,2), min_df = 2, dan max_df= 0,8. Kemudian di evaluasi kembali menggunakan average_similarity dan diperoleh hasilnya yaitu 0,7612433275703991 yang artinya tingkat similarity sudah cukup bagus sehingga model ini sudah layak digunakan. Kemudian dicari kembali rekomendasi buku dari judul "A Little Princess" dan diperoleh top 5 rekomendasinya yaitu:
 
+ <img src="https://raw.githubusercontent.com/AmandaRiyas/Sistem-Rekomendasi/refs/heads/main/Gambar/top%205%20terbaru.png" width="500"/>
+
+Kemudian di cek kemabli similaritynya menggunakan average_similarity dan diperoleh hasilnya yaitu:
 
 Pada bagian ini Anda perlu menyebutkan metrik evaluasi yang digunakan. Kemudian, jelaskan hasil proyek berdasarkan metrik evaluasi tersebut.
 
