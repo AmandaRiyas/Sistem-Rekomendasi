@@ -96,15 +96,17 @@ Pada tahap ini, dilakukan pemodelan untuk membuat sistem rekomendasi buku dengan
 
   Dengan cosine similarity, maka dapat diidentifikasi kesamaan antara buku satu dengan buku lainnya. Shape (1047, 1047) merupakan ukuran matriks similarity dari data yang dimiliki. Berdasarkan data yang ada, matriks berukuran 1047 buku x 1047 buku (masing-masing dalam sumbu X dan Y). Artinya, kita mengidentifikasi tingkat kesamaan pada 1047 nama buku. Tapi tidak ditampilkan semuanya. Oleh karena itu, hanya dipilih 10 restoran pada baris vertikal dan 5 restoran pada sumbu horizontal seperti pada contoh di atas. Semakin besar nilai dari output maka tingkat kemiripan buku semakin tinggi.
 3. Mendapatkan Rekomendasi
-  Untuk mengecek apakah bisa menampilkan rekomendasi buku atau tidak maka dicek terlebih dahulu dengan memasukkan nama buku yang ada di dataset, kemudian setelah buku tersebut tersedia maka dilakukan pencarian top 5 buku yang mirip dengan buku tersebut. Dari pencarian buku yang berjudul "A Little Princess" diperoleh buku lain yang memiliki kemiripan yaitu:
+   Untuk mengecek apakah bisa menampilkan rekomendasi buku atau tidak maka dicek terlebih dahulu dengan memasukkan nama buku yang ada di dataset, kemudian setelah buku tersebut tersedia maka dilakukan pencarian top 5 buku yang mirip dengan buku tersebut. Dari pencarian buku yang berjudul "A Little Princess" diperoleh buku lain yang memiliki kemiripan yaitu:
 
 <img src="https://raw.githubusercontent.com/AmandaRiyas/Sistem-Rekomendasi/refs/heads/main/Gambar/Top%205.png" width="500"/>
 
-Dari hasil Top 5 rekomendasi di atas maka buku A Little Princess memiliki kemiripan dengan "Loving Frank", "Skeleton Crew", "Lover Enshrined, part one", "The Complete Anne of Green Gables Boxed Set", dan "Anne of the Island"
+   Dari hasil Top 5 rekomendasi di atas maka buku A Little Princess memiliki kemiripan dengan "Loving Frank", "Skeleton Crew", "Lover Enshrined, part one", "The Complete Anne of Green Gables Boxed Set", dan "Anne of the Island"
   
 Tahapan ini membahas mengenai model sisten rekomendasi yang Anda buat untuk menyelesaikan permasalahan. Sajikan top-N recommendation sebagai output.
 
 ## Evaluation
+Evaluasi yang digunakan pada model content best filtering ini yaitu average_similarity. Dari average_similarity diperoleh nilainya yaitu 0,2233872976398874, namun nilai ini masih terlalu rendah. Oleh karena itu diperlukan tuning model untuk mendapatkan akurasi yang lebih baik.
+
 Pada bagian ini Anda perlu menyebutkan metrik evaluasi yang digunakan. Kemudian, jelaskan hasil proyek berdasarkan metrik evaluasi tersebut.
 
 Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
