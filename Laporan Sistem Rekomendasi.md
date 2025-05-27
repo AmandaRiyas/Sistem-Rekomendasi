@@ -69,19 +69,21 @@ Untuk memahami seperti apa data yang digunakan maka dilakukan data understanding
     - Pada `Author_Rating` mayoritas memiliki kategori Intermediate dan yang paling rendah Novice
     - Pada `genre` didominasi oleh genre fiction dan yang paling rendah genre children
     - Pada `Publisher` penerbit terbanyaknya yaitu Amazon Digital Services, Inc
-   
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data beserta insight atau exploratory data analysis.
 
 ## Data Preparation
-Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
-
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan proses data preparation yang dilakukan
-- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
+Data preparation sangat penting dilakukan sebelum membuat pemodelan karena untuk mengetahui lebih mendalam mengenai seperti apa data yang digunakan untuk menganalisis suatu permasalahan dan memastikan tidak ada kesalahan sebelum pemodelan agar model yang dihasilkan nanti lebih akurat. Pada bagian Data Preparation ada beberapa tahapan yang dilakukan yaitu:
+1. Menangani data yang kosong
+   Karena pada variabel Book Name terdapat 23 data yang kosong, oleh karena itu diperlukan penanganan dengan menghapus data karena nantinya akan sulit menganalisis buku jika nama buku tidak ada. Kemudian pada variabel language_code terdapat 53 data kosong oleh karena itu dilakukan pengisian data yang kosong dengan modus agar data tetap bisa diproses dengan konsisten.
+2. Menghapus variabel yang tidak dibutuhkan
+   Terdapat beberapa variabel yang tidak di butuhkan untuk mmebuat model sistem rekomendasi dengan content best filtering. Variabel-variabel tersebut yaitu `Author_Rating`, `Book_average_rating`, `Book_ratings_count`, `gross sales`, `publisher revenue`, `sale price`, `sales rank`, `units sold`, `index`, dan `Publishing Year`. Dan setelah dilakukan penghapusan diperoleh sisa data yaitu 1047 dan variabelnya 5 yaitu variabel `Book Name`, `Author`, `language_code`, `genre`, `Publisher` dengan tipe data object semua.
 
 ## Modeling
+Pada tahap ini, dilakukan pemodelan untuk membuat sistem rekomendasi buku dengan content best filtering dengan tahapan:
+1. TF-IDF Vectorizer
+   TF-IDF Vectorizer digunakan untuk mengubah teks menjadi matriks vektor, sehingga bisa digunakan dalam model machine learning sistem rekomendasi. Namun setelah membuat TF-IDF Vectorizer ternyata ada karakter yang aneh sehingga perlu dilakukan penghapusan karakter aneh tersebut. Dan setelah dilakukan penghapusan karakter aneh, lakukan fit dan transformasi ke dalam bentuk matriks dan diperoleh hasil akhir ukuran matriksnya yaitu 1047 baris dan 1437 kolom. Untuk menghasilkan vektor tf-idf dalam bentuk matriks, kita menggunakan fungsi todense() kemudian lihat matriks tf-idf untuk beberapa nama buku dan content atau variabel yang digunakan untuk membuat sistem rekomendasi dan diperoleh output:
+   
+   
+
 Tahapan ini membahas mengenai model sisten rekomendasi yang Anda buat untuk menyelesaikan permasalahan. Sajikan top-N recommendation sebagai output.
 
 **Rubrik/Kriteria Tambahan (Opsional)**: 
