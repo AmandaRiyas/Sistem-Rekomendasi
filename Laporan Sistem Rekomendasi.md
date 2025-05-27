@@ -59,6 +59,17 @@ Untuk memahami seperti apa data yang digunakan maka dilakukan data understanding
     - Pada `sale price` data miring ke kanan (right-skewed)
     - Pada `sales rank` distribusi data hampir uniform atau penyebaran data cukup rata
     - Pada `units sold` distribusi data sangat miring ke kanan
+4. Visualisasi variabel kategorik
+   
+   <img src="https://raw.githubusercontent.com/AmandaRiyas/Sistem-Rekomendasi/refs/heads/main/Gambar/visualisasi%20data%20kategorik.png" width="500"/>
+
+   - Pada `Book Name` distribusi rata rata sangat rendah karena tidak ada buku yang mendominasi
+    - Pada `Author` memiliki distribusi long tail distribution dengan auuthor yang paling dominan yaitu Stephen King
+    - Pada `language_code` didominasi oleh kode eng, yang artinya bahasa utama buku tersebut adalah bahasa inggris
+    - Pada `Author_Rating` mayoritas memiliki kategori Intermediate dan yang paling rendah Novice
+    - Pada `genre` didominasi oleh genre fiction dan yang paling rendah genre children
+    - Pada `Publisher` penerbit terbanyaknya yaitu Amazon Digital Services, Inc
+   
 
 **Rubrik/Kriteria Tambahan (Opsional)**:
 - Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data beserta insight atau exploratory data analysis.
