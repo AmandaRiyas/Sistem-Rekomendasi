@@ -84,7 +84,7 @@ Pada tahap ini, dilakukan pemodelan untuk membuat sistem rekomendasi buku dengan
 1. TF-IDF Vectorizer
    TF-IDF Vectorizer digunakan untuk mengubah teks menjadi matriks vektor, sehingga bisa digunakan dalam model machine learning sistem rekomendasi. Namun setelah membuat TF-IDF Vectorizer ternyata ada karakter yang aneh sehingga perlu dilakukan penghapusan karakter aneh tersebut. Dan setelah dilakukan penghapusan karakter aneh, lakukan fit dan transformasi ke dalam bentuk matriks dan diperoleh hasil akhir ukuran matriksnya yaitu 1047 baris dan 1437 kolom. Untuk menghasilkan vektor tf-idf dalam bentuk matriks, kita menggunakan fungsi todense() kemudian lihat matriks tf-idf untuk beberapa nama buku dan content atau variabel yang digunakan untuk membuat sistem rekomendasi dan diperoleh output:
    
-   <img src="https://raw.githubusercontent.com/AmandaRiyas/Sistem-Rekomendasi/refs/heads/main/Gambar/Matriks%20TF-IDF.png" width="500"/>
+   <img src="https://raw.githubusercontent.com/AmandaRiyas/Sistem-Rekomendasi/refs/heads/main/Gambar/dataframe.png" width="500"/>
 
    Hasil 0.0 wajar, nilai ini muncul karena kata-kata yang dipilih tidak ada dalam konten buku yang ditampilkan
 2. Cosine Similarity
