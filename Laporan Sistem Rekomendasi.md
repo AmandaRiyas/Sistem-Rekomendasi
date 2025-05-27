@@ -98,13 +98,11 @@ Pada tahap ini, dilakukan pemodelan untuk membuat sistem rekomendasi buku dengan
 3. Mendapatkan Rekomendasi
   Untuk mengecek apakah bisa menampilkan rekomendasi buku atau tidak maka dicek terlebih dahulu dengan memasukkan nama buku yang ada di dataset, kemudian setelah buku tersebut tersedia maka dilakukan pencarian top 5 buku yang mirip dengan buku tersebut. Dari pencarian buku yang berjudul "A Little Princess" diperoleh buku lain yang memiliki kemiripan yaitu:
 
-<img src="https://raw.githubusercontent.com/AmandaRiyas/Sistem-Rekomendasi/refs/heads/main/Gambar/Similarity%20buku%20acak.png" width="500"/>
+<img src="https://raw.githubusercontent.com/AmandaRiyas/Sistem-Rekomendasi/refs/heads/main/Gambar/Top%205.png" width="500"/>
+
+Dari hasil Top 5 rekomendasi di atas maka buku A Little Princess memiliki kemiripan dengan "Loving Frank", "Skeleton Crew", "Lover Enshrined, part one", "The Complete Anne of Green Gables Boxed Set", dan "Anne of the Island"
   
 Tahapan ini membahas mengenai model sisten rekomendasi yang Anda buat untuk menyelesaikan permasalahan. Sajikan top-N recommendation sebagai output.
-
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menyajikan dua solusi rekomendasi dengan algoritma yang berbeda.
-- Menjelaskan kelebihan dan kekurangan dari solusi/pendekatan yang dipilih.
 
 ## Evaluation
 Pada bagian ini Anda perlu menyebutkan metrik evaluasi yang digunakan. Kemudian, jelaskan hasil proyek berdasarkan metrik evaluasi tersebut.
