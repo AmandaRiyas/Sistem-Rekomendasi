@@ -94,7 +94,7 @@ Pada tahap ini, dilakukan pemodelan untuk membuat sistem rekomendasi buku dengan
 - Nilai rendah menunjukkan perbedaan konten yang signifikan
   Selanjutnya lihat matriks kesamaan setiap resto dengan menampilkan nama restoran dalam 10 sampel kolom (axis = 0) dan 5 sampel baris (axis=1) dan diperoleh output:
 
-  <img src="https://raw.githubusercontent.com/AmandaRiyas/Sistem-Rekomendasi/refs/heads/main/Gambar/Similarity%20buku%20acak.png" width="500"/>
+  <img src="https://raw.githubusercontent.com/AmandaRiyas/Sistem-Rekomendasi/refs/heads/main/Gambar/cosine%20similarity%20baru.png" width="500"/>
 
   Dengan cosine similarity, maka dapat diidentifikasi kesamaan antara buku satu dengan buku lainnya. Shape (1047, 1047) merupakan ukuran matriks similarity dari data yang dimiliki. Berdasarkan data yang ada, matriks berukuran 1047 buku x 1047 buku (masing-masing dalam sumbu X dan Y). Artinya, kita mengidentifikasi tingkat kesamaan pada 1047 nama buku. Tapi tidak ditampilkan semuanya. Oleh karena itu, hanya dipilih 10 restoran pada baris vertikal dan 5 restoran pada sumbu horizontal seperti pada contoh di atas. Semakin besar nilai dari output maka tingkat kemiripan buku semakin tinggi.
 3. Mendapatkan Rekomendasi
