@@ -101,11 +101,17 @@ Pada tahap ini, dilakukan pemodelan untuk membuat sistem rekomendasi buku dengan
 <img src="https://raw.githubusercontent.com/AmandaRiyas/Sistem-Rekomendasi/refs/heads/main/Gambar/Top%205.png" width="500"/>
 
    Dari hasil Top 5 rekomendasi di atas maka buku A Little Princess memiliki kemiripan dengan "Loving Frank", "Skeleton Crew", "Lover Enshrined, part one", "The Complete Anne of Green Gables Boxed Set", dan "Anne of the Island"
-  
-Tahapan ini membahas mengenai model sisten rekomendasi yang Anda buat untuk menyelesaikan permasalahan. Sajikan top-N recommendation sebagai output.
 
 ## Evaluation
-Evaluasi yang digunakan pada model content best filtering ini yaitu average_similarity. Dari average_similarity diperoleh nilainya yaitu 0,2233872976398874, namun nilai ini masih terlalu rendah. Oleh karena itu diperlukan tuning model untuk mendapatkan akurasi yang lebih baik.
+Evaluasi yang digunakan pada model content best filtering ini yaitu average_similarity. Formula dari average_similarity yaitu:
+
+ <img src="https://raw.githubusercontent.com/AmandaRiyas/Sistem-Rekomendasi/refs/heads/main/Gambar/Formula%20similarity.png" width="500"/>
+
+Dari average_similarity diperoleh nilainya yaitu 0,2233872976398874, artinya kesamaan antara buku masih terlalu jauh karena nilai ini masih terlalu rendah. Oleh karena itu diperlukan tuning model untuk mendapatkan akurasi yang lebih baik.
+
+## Tuning Model
+Tuning model diperlukan untuk meningkatkan akurasi similarity buku. Oleh karena itu dilakukan Hyperparameter Tuning pada TF-IDF Vectorizer dengan parameter stop_words = english, max_features = 1000, ngram_range = (1,2), min_df = 2, dan max_df= 0,8. Kemudian di evaluasi kembali menggunakan average_similarity dan diperoleh hasilnya yaitu 0,7612433275703991 yang artinya tingkat similarity sudah cukup bagus sehingga model ini sudah layak digunakan. Kemudian dicari kembali rekomendasi buku dari judul "A Little Princess" dan diperoleh top 5 rekomendasinya yaitu:
+
 
 Pada bagian ini Anda perlu menyebutkan metrik evaluasi yang digunakan. Kemudian, jelaskan hasil proyek berdasarkan metrik evaluasi tersebut.
 
