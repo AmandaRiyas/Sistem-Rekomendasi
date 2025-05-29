@@ -81,9 +81,10 @@ Data preparation sangat penting dilakukan sebelum membuat pemodelan karena untuk
 3. TF-IDF Vectorizer
    Sebelumnya dilakukan pengecekan kolom yang ada pada data dan diperoleh hasilnya yaitu terdapat kolom Book Name, Author, language_code, genre, dan Publisher. Kemudian dilakukan penghapusan spasi di awal dan akhir dari setiap nama kolom. Setelah itu genre, Author, Publisher, dan language_code digabung menjadi variabel content dan dilakukan transformasi content menjadi matriks TF-IDF. Baru setelah itu dibuat array dari fir=tur index integer ke fitur nama. Pada ouuput terlihat bahwa terdapat karakter yang aneh sehingga perlu dilakukan penghapusan karakter aneh tersebut. Setelah dilakukan penghapusan karakter aneh, kemudian dilakukan inisialisasi ulang TF-IDF dan setelah itu baru dilakukan fit dan transformasi ke dalam bentuk matriks. Pada output diperoleh hasil akhir ukuran matriksnya yaitu 1047 baris dan 1437 kolom. Untuk menghasilkan vektor tf-idf dalam bentuk matriks, kita menggunakan fungsi todense() kemudian dibuat datafframe untuk melihat TF-IDF matriks. Output dari perlakuan ini yaitu:
    
-   <img src="https://raw.githubusercontent.com/AmandaRiyas/Sistem-Rekomendasi/refs/heads/main/Gambar/dataframe.png" width="500"/>
+   <img src="https://raw.githubusercontent.com/AmandaRiyas/Sistem-Rekomendasi/refs/heads/main/Gambar/matriks.png" width="500"/>
 
-   Hasil 0.0 wajar, nilai ini muncul karena kata-kata yang dipilih tidak ada dalam konten buku yang ditampilkan
+   Hasil dari output diperoleh semuanya berisi 0.0. Nilai 0.0 dianggap wajar karena kata-kata yang dipilih tidak ada dalam konten buku yang ditampilkan
+   
 ## Modeling
 Pada tahap ini, dilakukan pemodelan untuk membuat sistem rekomendasi buku dengan content best filtering dengan tahapan:
 1. Cosine Similarity
@@ -91,32 +92,25 @@ Pada tahap ini, dilakukan pemodelan untuk membuat sistem rekomendasi buku dengan
 - 1 berarti dokumen itu identik dengan dirinya sendiri
 - Nilai mendekati 1 menunjukkan kemiripan konten yang tinggi antar buku
 - Nilai rendah menunjukkan perbedaan konten yang signifikan
-  Selanjutnya lihat matriks kesamaan setiap resto dengan menampilkan nama restoran dalam 10 sampel kolom (axis = 0) dan 5 sampel baris (axis=1) dan diperoleh output:
+  Selanjutnya lihat matriks kesamaan setiap buku dengan menampilkan nama buku dalam 10 sampel kolom (axis = 0) dan 5 sampel baris (axis=1) dan diperoleh output:
 
-  <img src="https://raw.githubusercontent.com/AmandaRiyas/Sistem-Rekomendasi/refs/heads/main/Gambar/cosine%20similarity%20baru.png" width="500"/>
+  <img src="https://raw.githubusercontent.com/AmandaRiyas/Sistem-Rekomendasi/refs/heads/main/Gambar/10%20buku.png" width="500"/>
 
-  Dengan cosine similarity, maka dapat diidentifikasi kesamaan antara buku satu dengan buku lainnya. Shape (1047, 1047) merupakan ukuran matriks similarity dari data yang dimiliki. Berdasarkan data yang ada, matriks berukuran 1047 buku x 1047 buku (masing-masing dalam sumbu X dan Y). Artinya, kita mengidentifikasi tingkat kesamaan pada 1047 nama buku. Tapi tidak ditampilkan semuanya. Oleh karena itu, hanya dipilih 10 restoran pada baris vertikal dan 5 restoran pada sumbu horizontal seperti pada contoh di atas. Semakin besar nilai dari output maka tingkat kemiripan buku semakin tinggi.
+  Dengan cosine similarity, maka dapat diidentifikasi kesamaan antara buku satu dengan buku lainnya. Shape (1047, 1047) merupakan ukuran matriks similarity dari data yang dimiliki. Berdasarkan data yang ada, matriks berukuran 1047 buku x 1047 buku (masing-masing dalam sumbu X dan Y). Artinya, kita mengidentifikasi tingkat kesamaan pada 1047 nama buku. Tapi tidak ditampilkan semuanya. Oleh karena itu, hanya dipilih 10 buku pada baris vertikal dan 5 buku pada sumbu horizontal seperti pada contoh di atas. Semakin besar nilai dari output maka tingkat kemiripan buku semakin tinggi.
 2. Mendapatkan Rekomendasi
    Untuk mengecek apakah bisa menampilkan rekomendasi buku atau tidak maka dicek terlebih dahulu dengan memasukkan nama buku yang ada di dataset, kemudian setelah buku tersebut tersedia maka dilakukan pencarian top 5 buku yang mirip dengan buku tersebut. Dari pencarian buku yang berjudul "A Little Princess" diperoleh buku lain yang memiliki kemiripan yaitu:
 
-<img src="https://raw.githubusercontent.com/AmandaRiyas/Sistem-Rekomendasi/refs/heads/main/Gambar/Top%205.png" width="500"/>
+<img src="https://raw.githubusercontent.com/AmandaRiyas/Sistem-Rekomendasi/refs/heads/main/Gambar/rekomendasi%20buku%20baru.png" width="500"/>
 
    Dari hasil Top 5 rekomendasi di atas maka buku A Little Princess memiliki kemiripan dengan "Loving Frank", "Skeleton Crew", "Lover Enshrined, part one", "The Complete Anne of Green Gables Boxed Set", dan "Anne of the Island"
 
 ## Evaluation
-Evaluasi yang digunakan pada model content best filtering ini yaitu average_similarity. Formula dari average_similarity yaitu:
+Evaluasi yang digunakan pada model content best filtering ini yaitu average_similarity. Formula dari Precision@K yaitu:
 
  <img src="https://raw.githubusercontent.com/AmandaRiyas/Sistem-Rekomendasi/refs/heads/main/Gambar/Formula%20similarity.png" width="500"/>
 
-Dari average_similarity diperoleh nilainya yaitu 0,2233872976398874, artinya kesamaan antara buku masih terlalu jauh karena nilai ini masih terlalu rendah. Oleh karena itu diperlukan tuning model untuk mendapatkan akurasi yang lebih baik.
-
-## Tuning Model
-Tuning model diperlukan untuk meningkatkan akurasi similarity buku. Oleh karena itu dilakukan Hyperparameter Tuning pada TF-IDF Vectorizer dengan parameter stop_words = english, max_features = 1000, ngram_range = (1,2), min_df = 2, dan max_df= 0,8. Kemudian di evaluasi kembali menggunakan average_similarity dan diperoleh hasilnya yaitu 0,7612433275703991 yang artinya tingkat similarity sudah cukup bagus sehingga model ini sudah layak digunakan. Kemudian dicari kembali rekomendasi buku dari judul "A Little Princess" dan diperoleh top 5 rekomendasinya yaitu:
-
- <img src="https://raw.githubusercontent.com/AmandaRiyas/Sistem-Rekomendasi/refs/heads/main/Gambar/top%205%20terbaru.png" width="500"/>
-
-Kemudian di cek kemabli similaritynya menggunakan average_similarity dan diperoleh hasilnya yaitu:
-
-<img src="https://raw.githubusercontent.com/AmandaRiyas/Sistem-Rekomendasi/refs/heads/main/Gambar/plot%20evaluasi.png" width="500"/>
-
-Dari gambar di atas terlihat bahwa akurasi dari average_similarity sudah baik.
+Dari Precision@K diperoleh nilainya yaitu: 
+- Dari hasil evaluasi model diperoleh akurasi genre 1, artinya model sangat baik dalam mencari buku dengan genre yang sama
+- Dari hasil evaluasi Author diperoleh nilai akurasinya 0 karena tidak ada Author yang sama dengan buku A Little Princess pada buku yang direkomendasikan, hal ini bukan berarti model tidak baik, namun model lebih mementingkan kesamaan tema buku dari pada penulis
+- Dari hasil evaluasi Publisher diperoleh nilai akurasinya 0,8 yang artinya sudah hampir semua buku yang direkomendasikan memiliki Publisher yang sama
+- Dari hasil evaluasi language_code diperoleh nilai akurasinya 0,8, yang artinya sudah hampir semua buku yang direkomendasikan memiliki kode bahasa buku yang sama
