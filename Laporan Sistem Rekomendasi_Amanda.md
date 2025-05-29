@@ -105,9 +105,9 @@ Pada tahap ini, dilakukan pemodelan untuk membuat sistem rekomendasi buku dengan
    Dari hasil Top 5 rekomendasi di atas maka buku A Little Princess memiliki kemiripan dengan "Loving Frank", "Skeleton Crew", "Lover Enshrined, part one", "The Complete Anne of Green Gables Boxed Set", dan "Anne of the Island"
 
 ## Evaluation
-Evaluasi yang digunakan pada model content best filtering ini yaitu average_similarity. Formula dari Precision@K yaitu:
+Evaluasi yang digunakan pada model content best filtering ini yaitu Precision@K. Precision@K mengukur proporsi item yang relevan di antara K item yang direkomendasikan. Evaluasi ini cocok untuk mengevaluasi model sistem rekomendasi content best filtering karena Precision@K hanya mengevaluasi seberapa akurat sistem dalam memberikan rekomendasi teratas. Formula dari Precision@K yaitu:
 
- <img src="https://raw.githubusercontent.com/AmandaRiyas/Sistem-Rekomendasi/refs/heads/main/Gambar/Formula%20similarity.png" width="500"/>
+ <img src="https://raw.githubusercontent.com/AmandaRiyas/Sistem-Rekomendasi/refs/heads/main/Gambar/Rumus%20evaluasi.png" width="500"/>
 
 Dari Precision@K diperoleh nilainya yaitu: 
 - Dari hasil evaluasi model diperoleh akurasi genre 1, artinya model sangat baik dalam mencari buku dengan genre yang sama
